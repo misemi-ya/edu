@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | Misemi-ya K-15</title>
+    
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+    <!-- アイコン -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #002b4d;
+            --accent-color: #bfa45f;
+            --text-white: #ffffff;
+            --overlay-color: rgba(0, 43, 77, 0.85);
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Noto Serif JP', serif;
+            color: var(--text-white);
+            background-color: var(--primary-color);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* 背景：格式高い図書館や廊下をイメージ */
+        .bg-image {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1507842217121-9e9b08e511cf?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: blur(3px);
+            z-index: -2;
+            animation: zoomSlow 30s infinite alternate;
+        }
+        @keyframes zoomSlow {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        /* オーバーレイ */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--overlay-color), rgba(0,0,0,0.9));
+            z-index: -1;
+        }
+
+        /* 装飾：校章ウォーターマーク */
+        .watermark {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .watermark img { width: 600px; }
+
+        /* コンテンツコンテナ */
+        .error-container {
+            text-align: center;
+            z-index: 10;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        /* 404の文字デザイン */
+        .error-code {
+            font-family: 'Cinzel', serif;
+            font-size: 10rem;
+            font-weight: 700;
+            line-height: 1;
+            margin: 0;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--accent-color);
+            position: relative;
+            display: inline-block;
+            animation: float 6s ease-in-out infinite;
+        }
+        /* 金色の光沢アニメーション */
+        .error-code::before {
+            content: '404';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            color: var(--accent-color);
+            opacity: 0.2;
+            filter: blur(15px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .divider {
+            width: 80px; height: 3px;
+            background-color: var(--accent-color);
+            margin: 20px auto 40px;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+        }
+
+        .error-desc {
+            font-size: 1rem;
+            line-height: 2;
+            opacity: 0.8;
+            margin-bottom: 50px;
+        }
+
+        /* ナビゲーションボタン */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--text-white);
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-home {
+            grid-column: span 2;
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: bold;
+        }
+        .btn-home:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .error-code { font-size: 6rem; }
+            .error-title { font-size: 1.5rem; }
+            .nav-grid { grid-template-columns: 1fr; }
+            .btn-home { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div>
+    <div class="overlay"></div>
+
+    <div class="watermark">
+        <!-- ロゴ画像がない場合は表示されません -->
+        <img src="../校章.png" alt="" onerror="this.style.display='none'">
+    </div>
+
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="divider"></div>
+        <h1 class="error-title">PAGE NOT FOUND</h1>
+        
+        <p class="error-desc">
+            申し訳ございません。<br>
+            お探しのページは、移動または削除された可能性があります。<br>
+            あるいは、現在アクセスが制限されている区域です。
+        </p>
+
+        <div class="nav-grid">
+            <a href="index.html" class="btn btn-home">
+                <i class="fa-solid fa-school"></i> 学校トップページへ戻る
+            </a>
+            <a href="#" onclick="history.back()" class="btn">
+                <i class="fa-solid fa-arrow-left"></i> 前のページへ
+            </a>
+            <a href="#" onclick="location.href='index.html#admissions'" class="btn">
+                <i class="fa-solid fa-pen-nib"></i> 入試情報を見る
+            </a>
+        </div>
+        
+        <p style="margin-top: 50px; font-size: 0.7rem; opacity: 0.5;">
+            &copy; Misemi-ya University Integrated School.
+        </p>
+    </div>
+
+</body>
+</html>
