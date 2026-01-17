@@ -254,10 +254,13 @@
         /* =========================================
            Home - Hero Slider
            ========================================= */
-        .hero {
-            position: relative;
-            height: 600px;
-            overflow: hidden;
+
+        /* 修正後（背景色を追加） */
+        .hero { 
+            position: relative; 
+            height: 600px; 
+            overflow: hidden; 
+            background-color: var(--primary-color); /* 画像の裏を濃紺にする */
         }
         .slide {
             position: absolute;
@@ -577,12 +580,16 @@
     <main>
         <!-- ================= HOME SECTION ================= -->
         <div id="home" class="page-section active">
-            <!-- ヒーローエリア -->
+<!-- ヒーローエリア -->
             <div class="hero">
-                <!-- 画像はUnsplashから安全なものを厳選 -->
-                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1600&auto=format&fit=crop');"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507842217121-9e9b08e511cf?q=80&w=1600&auto=format&fit=crop');"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519452575417-564c140db290?q=80&w=1600&auto=format&fit=crop');"></div>
+                <!-- 1枚目: キャンパス (外観) -->
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                
+                <!-- 2枚目: 図書館 (新しい画像に変更しました) -->
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+                
+                <!-- 3枚目: 回廊 (建築) -->
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1592280771190-3e2e4d571952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
                 
                 <div class="hero-overlay">
                     <h2 class="hero-title serif">伝統と革新の融合</h2>
@@ -1153,19 +1160,36 @@
             }
         }
 
-        // ================= Slider Logic =================
+// ================= Slider Logic (修正版) =================
         let slideIndex = 0;
+        
         function showSlides() {
             const slides = document.querySelectorAll(".slide");
-            // ホームが表示されている時のみスライドさせる
-            if (document.getElementById('home').classList.contains('active')) {
-                slides.forEach(slide => slide.classList.remove("active"));
-                slideIndex++;
-                if (slideIndex > slides.length) { slideIndex = 1 }
-                slides[slideIndex - 1].classList.add("active");
+            
+            // エラー防止: 画像がない場合は何もしない
+            if (slides.length === 0) return;
+
+            // すべてのスライドを非表示にする
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
             }
-            setTimeout(showSlides, 5000); // 5秒ごとに切り替え
+
+            // 次のインデックスへ
+            slideIndex++;
+            
+            // 最後の画像の次は最初に戻る
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // 指定のスライドを表示（activeクラスをつけるとCSSでフワッと表示される）
+            slides[slideIndex - 1].classList.add("active");
+
+            // 5秒後 (5000ms) に次の画像へ
+            setTimeout(showSlides, 5000);
         }
+
+        // スライドショー開始
         showSlides();
 
         // ================= Modal Logic =================
