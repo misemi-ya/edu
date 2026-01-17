@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>店魅偉屋大学附属幼小中高一貫教育校 | Misemi-ya K-12</title>
+    <meta name="description" content="店魅偉屋大学附属幼小中高一貫教育校の公式Webサイトです。幼稚園から高等学校までの一貫教育を通じて、次世代のリーダーを育成します。">
+    
+    <!-- ファビコン設定 (親階層にある場合) -->
+    <link rel="icon" href="favicon.ico">
+    
+    <!-- フォント: 格式高い明朝体 (Noto Serif JP) と ゴシック体 (Noto Sans JP) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- アイコン -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           CSS Reset & Base Styles
+           ========================================= */
+        :root {
+            --primary-color: #002b4d; /* 濃紺：知性・格式 */
+            --secondary-color: #8a1a1a; /* 深紅：情熱・伝統 */
+            --accent-color: #bfa45f; /* ゴールド：栄光 */
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --header-height: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: bottom;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .serif { font-family: 'Noto Serif JP', serif; }
+        
+        /* ボタン共通スタイル */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-family: 'Noto Serif JP', serif;
+            font-weight: bold;
+            border: 1px solid var(--primary-color);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background-color: var(--white);
+            z-index: -1;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            color: var(--primary-color);
+        }
+        .btn:hover::after {
+            left: 0;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        .btn-gold:hover {
+            color: var(--accent-color);
+        }
+
+        /* セクション共通 */
+        .section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+        .section-subtitle {
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           Header
+           ========================================= */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: rgba(255,255,255,0.9);
+            font-size: 0.8rem;
+            padding: 8px 0;
+        }
+        .top-bar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-links a {
+            margin-left: 20px;
+            font-size: 0.85rem;
+        }
+        .top-links a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: var(--white);
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+        .logo img {
+            height: 50px; /* ロゴサイズ調整 */
+        }
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin: 0;
+        }
+        .logo-text span {
+            font-size: 0.7rem;
+            color: #666;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: normal;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        .main-nav a {
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 600;
+            color: var(--text-color);
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .main-nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 2px;
+            background-color: var(--secondary-color);
+            transition: 0.3s;
+        }
+        .main-nav a:hover::before,
+        .main-nav a.active::before {
+            width: 100%;
+        }
+
+        /* ハンバーガーメニュー (Mobile) */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+        }
+
+        /* =========================================
+           Page Sections (SPA Logic)
+           ========================================= */
+        .page-section {
+            display: none; /* JSで制御 */
+            animation: fadeIn 0.5s ease;
+        }
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================
+           Home - Hero Slider
+           ========================================= */
+        .hero {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slide.active { opacity: 1; }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 43, 77, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            background: rgba(0,0,0,0.5);
+            padding: 10px 30px;
+        }
+
+        /* =========================================
+           News & Topics
+           ========================================= */
+        .news-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        .news-list {
+            background: white;
+            border: 1px solid #eee;
+            padding: 20px;
+        }
+        .news-item {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px dashed #eee;
+            align-items: baseline;
+        }
+        .news-date {
+            font-family: 'Roboto', sans-serif;
+            color: #666;
+            width: 120px;
+            flex-shrink: 0;
+        }
+        .news-cat {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            background: var(--primary-color);
+            color: white;
+            margin-right: 15px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .news-cat.exam { background: var(--secondary-color); }
+        .news-cat.event { background: var(--accent-color); }
+
+        /* =========================================
+           School Stages (About)
+           ========================================= */
+        .stages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .stage-card {
+            background: white;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .stage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+        .stage-img {
+            height: 200px;
+            background-color: #ccc;
+            background-size: cover;
+            background-position: center;
+        }
+        .stage-content { padding: 30px 20px; }
+        .stage-title { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; }
+        .stage-desc { font-size: 0.9rem; color: #666; }
+
+        /* =========================================
+           Features & Philosophy
+           ========================================= */
+        .philosophy-box {
+            background-color: var(--light-bg);
+            padding: 60px;
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 40px;
+        }
+        .philosophy-text {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            text-align: justify;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .stat-item h3 { font-size: 3rem; color: var(--secondary-color); margin-bottom: 10px; }
+        .stat-item p { font-weight: bold; }
+
+        /* =========================================
+           Academics / Curriculum
+           ========================================= */
+        .curriculum-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .curriculum-table th, .curriculum-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+        .curriculum-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .curriculum-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* =========================================
+           Admissions
+           ========================================= */
+        .admission-card {
+            border: 2px solid var(--primary-color);
+            padding: 40px;
+            margin-bottom: 40px;
+            background: white;
+            position: relative;
+        }
+        .admission-tag {
+            position: absolute;
+            top: -15px; left: 40px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 20px;
+            font-weight: bold;
+        }
+        .req-list li {
+            border-bottom: 1px dashed #ddd;
+            padding: 10px 0;
+            display: flex;
+        }
+        .req-label { width: 150px; font-weight: bold; color: var(--primary-color); }
+
+        /* =========================================
+           Modal (Request Brochure)
+           ========================================= */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 2000;
+            display: none; justify-content: center; align-items: center;
+        }
+        .modal {
+            background: white; width: 600px; max-width: 90%;
+            padding: 40px; border-radius: 4px;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute; top: 15px; right: 15px;
+            font-size: 1.5rem; cursor: pointer; color: #999;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;
+        }
+
+        /* =========================================
+           Footer
+           ========================================= */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+            margin-bottom: 20px;
+        }
+        .footer-logo h2 { font-size: 1.8rem; margin-bottom: 10px; }
+        .footer-links h4 { color: var(--accent-color); margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links a:hover { color: var(--accent-color); }
+        .copyright { text-align: center; font-size: 0.8rem; opacity: 0.7; }
+        
+        /* 引用・クレジットのスタイル */
+        .image-credits {
+            text-align: center; margin-top: 10px; font-size: 0.7rem; opacity: 0.5; color: #fff;
+        }
+        .image-credits a { border-bottom: 1px solid rgba(255,255,255,0.3); }
+
+        /* Loading Animation */
+        #loading {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--primary-color); z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            flex-direction: column; color: white;
+        }
+        .loader {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%; width: 50px; height: 50px;
+            animation: spin 1s linear infinite; margin-bottom: 20px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .stages-grid, .stats-grid, .footer-grid { grid-template-columns: 1fr; }
+            .main-nav { display: none; } /* Mobile Menu would be implemented here */
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ローディング画面 -->
+    <div id="loading">
+        <div class="loader"></div>
+        <p class="serif" style="letter-spacing: 2px;">Misemi-ya Integrated School</p>
+    </div>
+
+    <!-- 上部バー -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="user-links">
+                <a href="#" onclick="alert('保護者ポータルへ移動します')"><i class="fa-solid fa-users"></i> 保護者の方</a>
+                <a href="#" onclick="alert('在学生ポータルへ移動します')"><i class="fa-solid fa-graduation-cap"></i> 在学生の方</a>
+            </div>
+            <div class="top-links">
+                <!-- 大学へのリンク -->
+                <a href="https://u.misemi-ya.net" target="_blank" style="color: #fff; font-weight: bold;">
+                    <i class="fa-solid fa-building-columns"></i> 店魅偉屋大学 (University)
+                </a>
+                <a href="#" onclick="openModal()"><i class="fa-solid fa-envelope"></i> 資料請求</a>
+                <a href="#" onclick="alert('交通アクセス')"><i class="fa-solid fa-map-location-dot"></i> アクセス</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo" onclick="navigateTo('home')">
+                <img src="校章.png" alt="校章">
+                <div class="logo-text">
+                    <h1>店魅偉屋大学附属<br>幼小中高一貫教育校</h1>
+                    <span>Misemi-ya University Integrated School</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" onclick="navigateTo('about')" id="nav-about">学校紹介</a></li>
+                    <li><a href="#" onclick="navigateTo('kindergarten')" id="nav-kindergarten">幼稚園</a></li>
+                    <li><a href="#" onclick="navigateTo('elementary')" id="nav-elementary">初等部</a></li>
+                    <li><a href="#" onclick="navigateTo('junior')" id="nav-junior">中等部</a></li>
+                    <li><a href="#" onclick="navigateTo('senior')" id="nav-senior">高等部</a></li>
+                    <li><a href="#" onclick="navigateTo('admissions')" id="nav-admissions">入試情報</a></li>
+                    <li><a href="#" onclick="navigateTo('life')" id="nav-life">スクールライフ</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= HOME SECTION ================= -->
+        <div id="home" class="page-section active">
+            <!-- ヒーローエリア -->
+            <div class="hero">
+                <!-- 画像はUnsplashから安全なものを厳選 -->
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1600&auto=format&fit=crop');"></div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507842217121-9e9b08e511cf?q=80&w=1600&auto=format&fit=crop');"></div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519452575417-564c140db290?q=80&w=1600&auto=format&fit=crop');"></div>
+                
+                <div class="hero-overlay">
+                    <h2 class="hero-title serif">伝統と革新の融合</h2>
+                    <p class="hero-subtitle serif">未来を拓く、真のリーダーを育てる15年間</p>
+                    <div style="margin-top: 40px;">
+                        <button class="btn btn-gold" onclick="navigateTo('admissions')">令和8年度 入試情報公開中</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ニュース -->
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">News & Topics</h2>
+                        <p class="section-subtitle">学校からのお知らせ</p>
+                    </div>
+
+                    <div class="news-tabs">
+                        <button class="tab-btn active" onclick="filterNews('all')">すべて</button>
+                        <button class="tab-btn" onclick="filterNews('exam')">入試情報</button>
+                        <button class="tab-btn" onclick="filterNews('event')">イベント</button>
+                        <button class="tab-btn" onclick="filterNews('school')">学校生活</button>
+                    </div>
+
+                    <div class="news-list" id="news-container">
+                        <!-- JSで生成 -->
+                    </div>
+                    <div style="text-align:center; margin-top:20px;">
+                        <a href="#" class="btn" onclick="alert('過去の記事一覧へ')">一覧を見る</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4つの教育段階 -->
+            <section class="section" style="background-color: var(--light-bg);">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">4 Stages of Education</h2>
+                        <p class="section-subtitle">発達段階に合わせた一貫教育システム</p>
+                    </div>
+                    <div class="stages-grid">
+                        <div class="stage-card" onclick="navigateTo('kindergarten')">
+                            <!-- 安全なイラスト・画像を使用 -->
+                            <div class="stage-img" style="background-image:url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=500');"></div>
+                            <div class="stage-content">
+                                <h3 class="stage-title">幼稚園</h3>
+                                <p class="stage-desc">遊びを通じて学びの芽を育む</p>
+                            </div>
+                        </div>
+                        <div class="stage-card" onclick="navigateTo('elementary')">
+                            <div class="stage-img" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500');"></div>
+                            <div class="stage-content">
+                                <h3 class="stage-title">初等部</h3>
+                                <p class="stage-desc">基礎学力と知的好奇心の定着</p>
+                            </div>
+                        </div>
+                        <div class="stage-card" onclick="navigateTo('junior')">
+                            <div class="stage-img" style="background-image:url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=500');"></div>
+                            <div class="stage-content">
+                                <h3 class="stage-title">中等部</h3>
+                                <p class="stage-desc">自主自律の精神と論理的思考</p>
+                            </div>
+                        </div>
+                        <div class="stage-card" onclick="navigateTo('senior')">
+                            <div class="stage-img" style="background-image:url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=500');"></div>
+                            <div class="stage-content">
+                                <h3 class="stage-title">高等部</h3>
+                                <p class="stage-desc">専門性の追求と志の実現</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= ABOUT SECTION ================= -->
+        <div id="about" class="page-section">
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">School Philosophy</h2>
+                        <p class="section-subtitle">建学の精神・教育理念</p>
+                    </div>
+                    
+                    <div class="philosophy-box">
+                        <h3 class="serif" style="font-size:1.8rem; margin-bottom:20px; color:var(--primary-color);">「真理の探究と人格の陶冶」</h3>
+                        <p class="philosophy-text serif">
+                            本校は、店魅偉屋大学の伝統を受け継ぎ、知・徳・体の調和のとれた全人教育を目指します。
+                            変化の激しいグローバル社会において、自ら問いを立て、他者と協働しながら最適解を導き出す力、
+                            そして高い倫理観を持って社会に貢献できるリーダーを育成することを教育の根幹としています。<br><br>
+                            私たちは、生徒一人ひとりの可能性を信じ、その個性を最大限に伸ばす環境を提供することをお約束します。
+                            15年間の一貫教育を通じて培われる深い教養と広い視野は、生涯にわたる財産となることでしょう。
+                        </p>
+                        <div style="text-align:right; margin-top:30px;">
+                            <p class="serif">店魅偉屋大学附属幼小中高一貫教育校</p>
+                            <p class="serif" style="font-size:1.2rem; font-weight:bold;">学校長　店魅 偉屋</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>大学進学率</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1:15</h3>
+                            <p>教員一人当たりの生徒数</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>35+</h3>
+                            <p>海外提携校・姉妹校</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" style="background-color: var(--light-bg);">
+                <div class="container">
+                    <h3 class="serif" style="font-size:1.8rem; margin-bottom:30px; border-left:5px solid var(--secondary-color); padding-left:15px;">沿革</h3>
+                    <ul style="border-left: 2px solid #ddd; padding-left: 30px; margin-left: 10px;">
+                        <li style="margin-bottom:30px; position:relative;">
+                            <span style="position:absolute; left:-39px; top:0; width:16px; height:16px; background:var(--primary-color); border-radius:50%;"></span>
+                            <strong>1925年</strong> - 店魅偉屋学園創立。初代学長により教育理念が示される。
+                        </li>
+                        <li style="margin-bottom:30px; position:relative;">
+                            <span style="position:absolute; left:-39px; top:0; width:16px; height:16px; background:var(--primary-color); border-radius:50%;"></span>
+                            <strong>1950年</strong> - 高等部・中等部を開設。
+                        </li>
+                        <li style="margin-bottom:30px; position:relative;">
+                            <span style="position:absolute; left:-39px; top:0; width:16px; height:16px; background:var(--primary-color); border-radius:50%;"></span>
+                            <strong>1975年</strong> - 初等部を開設。小中高一貫教育体制が整う。
+                        </li>
+                        <li style="margin-bottom:30px; position:relative;">
+                            <span style="position:absolute; left:-39px; top:0; width:16px; height:16px; background:var(--primary-color); border-radius:50%;"></span>
+                            <strong>2000年</strong> - 附属幼稚園を開設。15年一貫教育の開始。
+                        </li>
+                        <li style="position:relative;">
+                            <span style="position:absolute; left:-39px; top:0; width:16px; height:16px; background:var(--primary-color); border-radius:50%;"></span>
+                            <strong>2025年</strong> - 創立100周年記念事業を実施。新キャンパス竣工。
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= KINDERGARTEN SECTION ================= -->
+        <div id="kindergarten" class="page-section">
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Kindergarten</h2>
+                        <p class="section-subtitle">附属幼稚園</p>
+                    </div>
+                    <div style="display:flex; gap:40px; align-items:center;">
+                        <div style="flex:1;">
+                            <h3 class="serif" style="color:var(--primary-color); margin-bottom:20px;">「あそび」こそ最高の「まなび」</h3>
+                            <p>豊かな自然環境の中で、五感をフルに使った遊びを通して、創造性や社会性の基礎を育みます。異年齢保育や英語あそびなど、附属ならではのカリキュラムも充実しています。</p>
+                            <ul style="margin-top:20px; list-style:circle; padding-left:20px;">
+                                <li>モンテッソーリ教育の導入</li>
+                                <li>ネイティブ講師による英語リトミック</li>
+                                <li>食育プログラム</li>
+                            </ul>
+                        </div>
+                        <div style="flex:1;">
+                            <img src="https://images.unsplash.com/photo-1587654780291-39c940483719?auto=format&fit=crop&w=800" alt="Kindergarten" style="border-radius:8px;">
+                        </div>
+                    </div>
+                    
+                    <h3 class="serif" style="margin-top:50px;">一日の流れ</h3>
+                    <table class="curriculum-table">
+                        <tr><th width="20%">時間</th><th>活動内容</th></tr>
+                        <tr><td>9:00</td><td>登園・自由遊び</td></tr>
+                        <tr><td>10:00</td><td>朝の会・クラス活動</td></tr>
+                        <tr><td>12:00</td><td>給食</td></tr>
+                        <tr><td>13:00</td><td>お昼寝・外遊び</td></tr>
+                        <tr><td>14:00</td><td>降園・預かり保育</td></tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= ELEMENTARY SECTION ================= -->
+        <div id="elementary" class="page-section">
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Elementary School</h2>
+                        <p class="section-subtitle">初等部</p>
+                    </div>
+                    <div style="display:flex; gap:40px; align-items:center; flex-direction:row-reverse;">
+                        <div style="flex:1;">
+                            <h3 class="serif" style="color:var(--primary-color); margin-bottom:20px;">知的好奇心を翼に</h3>
+                            <p>基礎学力の定着はもちろん、理科実験やプログラミングなどの体験型学習を重視しています。また、専科制を導入し、専門性の高い教員による質の高い授業を展開しています。</p>
+                        </div>
+                        <div style="flex:1;">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800" alt="Elementary" style="border-radius:8px;">
+                        </div>
+                    </div>
+                    
+                    <h3 class="serif" style="margin-top:50px;">カリキュラムの特色</h3>
+                    <table class="curriculum-table">
+                        <tr><th>学年</th><th>重点目標</th><th>特色ある教科</th></tr>
+                        <tr><td>1-2年</td><td>学習習慣の確立</td><td>生活科・英語活動</td></tr>
+                        <tr><td>3-4年</td><td>基礎学力の充実</td><td>理科実験・ICT</td></tr>
+                        <tr><td>5-6年</td><td>応用力の養成</td><td>教科担任制・探究</td></tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= JUNIOR HIGH SECTION ================= -->
+        <div id="junior" class="page-section">
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Junior High School</h2>
+                        <p class="section-subtitle">中等部</p>
+                    </div>
+                    <p class="serif" style="text-align:center; max-width:800px; margin:0 auto 40px;">
+                        思春期の多感な時期において、自律的な学習態度と論理的思考力を養います。
+                        高等部へのスムーズな接続を意識した先取り学習を行い、大学受験やその先の研究活動に必要な基礎力を盤石にします。
+                    </p>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px;">
+                        <div style="background:#f9f9f9; padding:30px;">
+                            <h4 style="color:var(--primary-color); margin-bottom:10px;">グローバル教育</h4>
+                            <p>オンライン英会話や海外研修旅行（オーストラリア・カナダ）を実施。生きた英語力を身につけます。</p>
+                        </div>
+                        <div style="background:#f9f9f9; padding:30px;">
+                            <h4 style="color:var(--primary-color); margin-bottom:10px;">サイエンス教育</h4>
+                            <p>大学の施設を利用した実験や、研究者による特別講義など、本物に触れる機会を多数設けています。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= SENIOR HIGH SECTION ================= -->
+        <div id="senior" class="page-section">
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Senior High School</h2>
+                        <p class="section-subtitle">高等部</p>
+                    </div>
+                    
+                    <h3 class="serif" style="margin-bottom:20px;">コース紹介</h3>
+                    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;">
+                        <div class="stage-card">
+                            <div class="stage-content">
+                                <h4 class="stage-title">特別進学コース</h4>
+                                <p>難関国公立大学、医学部を目指すコース。ハイレベルな演習と個別指導で合格を勝ち取ります。</p>
+                            </div>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-content">
+                                <h4 class="stage-title">総合進学コース</h4>
+                                <p>店魅偉屋大学への内部進学を中心に、多様な進路に対応。部活動との両立も可能です。</p>
+                            </div>
+                        </div>
+                        <div class="stage-card">
+                            <div class="stage-content">
+                                <h4 class="stage-title">国際バカロレアコース</h4>
+                                <p>海外大学進学を目指すコース。IBディプロマ取得に向けたオールイングリッシュの授業。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="serif" style="margin-top:50px;">進学実績 (2025年度)</h3>
+                    <table class="curriculum-table">
+                        <tr><th>大学名</th><th>合格者数</th></tr>
+                        <tr><td>店魅偉屋大学 (内部進学)</td><td>150名</td></tr>
+                        <tr><td>東京大学</td><td>15名</td></tr>
+                        <tr><td>京都大学</td><td>8名</td></tr>
+                        <tr><td>医学部医学科 (国公立)</td><td>25名</td></tr>
+                        <tr><td>早慶上理</td><td>120名</td></tr>
+                        <tr><td>海外大学</td><td>10名</td></tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= ADMISSIONS SECTION ================= -->
+        <div id="admissions" class="page-section">
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Admissions</h2>
+                        <p class="section-subtitle">入試情報</p>
+                    </div>
+
+                    <div class="admission-card">
+                        <div class="admission-tag">幼稚園</div>
+                        <h3 class="serif">令和8年度 園児募集要項</h3>
+                        <ul class="req-list">
+                            <li><span class="req-label">募集定員</span> 3年保育: 60名 / 2年保育: 若干名</li>
+                            <li><span class="req-label">願書配布</span> 2025年9月1日〜</li>
+                            <li><span class="req-label">選考日</span> 2025年11月1日 (面接・観察)</li>
+                        </ul>
+                        <div style="margin-top:20px;">
+                            <button class="btn" onclick="alert('PDFをダウンロードします')">募集要項PDF</button>
+                        </div>
+                    </div>
+
+                    <div class="admission-card">
+                        <div class="admission-tag" style="background:var(--primary-color);">初等部</div>
+                        <h3 class="serif">令和8年度 児童募集要項</h3>
+                        <ul class="req-list">
+                            <li><span class="req-label">募集定員</span> 80名 (男女)</li>
+                            <li><span class="req-label">出願期間</span> 2025年10月1日〜10月15日 (Web出願)</li>
+                            <li><span class="req-label">試験日</span> 2025年11月10日 (筆記・行動観察・面接)</li>
+                        </ul>
+                        <div style="margin-top:20px;">
+                            <button class="btn" onclick="alert('Web出願サイトへ移動します')">Web出願サイトへ</button>
+                        </div>
+                    </div>
+
+                    <div class="admission-card">
+                        <div class="admission-tag" style="background:var(--accent-color);">中等部</div>
+                        <h3 class="serif">令和8年度 生徒募集要項</h3>
+                        <ul class="req-list">
+                            <li><span class="req-label">募集定員</span> 120名 (内部進学含む)</li>
+                            <li><span class="req-label">入試日程</span> 第1回: 2月1日 / 第2回: 2月3日</li>
+                            <li><span class="req-label">試験科目</span> 国語・算数・理科・社会 (4教科)</li>
+                        </ul>
+                        <div style="margin-top:20px;">
+                            <button class="btn" onclick="alert('過去問ページへ移動します')">過去問題集</button>
+                        </div>
+                    </div>
+
+                    <h3 class="serif" style="margin-top:50px;">よくある質問 (FAQ)</h3>
+                    <div style="background:var(--light-bg); padding:20px; border-radius:4px;">
+                        <details style="margin-bottom:15px;">
+                            <summary style="font-weight:bold; cursor:pointer;">Q. 通学区域の制限はありますか？</summary>
+                            <p style="padding:10px; color:#555;">A. 制限は設けておりませんが、概ね片道90分以内で通学可能な範囲を推奨しています。</p>
+                        </details>
+                        <details style="margin-bottom:15px;">
+                            <summary style="font-weight:bold; cursor:pointer;">Q. アフタースクール（学童）はありますか？</summary>
+                            <p style="padding:10px; color:#555;">A. はい、初等部には放課後預かりシステム「ミセミヤ・キッズ」がございます（19時まで）。</p>
+                        </details>
+                        <details>
+                            <summary style="font-weight:bold; cursor:pointer;">Q. 学費について教えてください。</summary>
+                            <p style="padding:10px; color:#555;">A. 詳細は募集要項をご確認ください。特待生制度や奨学金制度も充実しています。</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= SCHOOL LIFE SECTION ================= -->
+        <div id="life" class="page-section">
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">School Life</h2>
+                        <p class="section-subtitle">充実した学校生活</p>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px;">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&w=800" alt="Library" style="width:100%; border-radius:4px;">
+                        </div>
+                        <div>
+                            <h3 class="serif">メディアセンター（図書館）</h3>
+                            <p>蔵書数10万冊を誇る知の拠点。自習スペースも完備しており、放課後は多くの生徒で賑わいます。大学図書館との連携システムも導入しています。</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="serif">カフェテリア</h3>
+                            <p>管理栄養士監修のバランスの取れたメニューを提供。アレルギー対応も万全です。生徒たちの憩いの場となっています。</p>
+                        </div>
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1576089235406-8d14668ba423?auto=format&fit=crop&w=800" alt="Cafeteria" style="width:100%; border-radius:4px;">
+                        </div>
+                    </div>
+                    
+                    <h3 class="serif" style="margin-top:50px; text-align:center;">年間行事</h3>
+                    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px;">
+                        <span style="background:#eee; padding:5px 15px; border-radius:20px;">4月 入学式</span>
+                        <span style="background:#eee; padding:5px 15px; border-radius:20px;">5月 体育祭</span>
+                        <span style="background:#eee; padding:5px 15px; border-radius:20px;">7月 海外研修</span>
+                        <span style="background:#eee; padding:5px 15px; border-radius:20px;">9月 文化祭</span>
+                        <span style="background:#eee; padding:5px 15px; border-radius:20px;">10月 合唱コンクール</span>
+                        <span style="background:#eee; padding:5px 15px; border-radius:20px;">12月 クリスマス礼拝</span>
+                        <span style="background:#eee; padding:5px 15px; border-radius:20px;">3月 卒業式</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- モーダル（資料請求） -->
+    <div class="modal-overlay" id="brochureModal">
+        <div class="modal">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 class="serif" style="text-align:center; margin-bottom:20px; color:var(--primary-color);">資料請求フォーム</h3>
+            <form onsubmit="event.preventDefault(); alert('資料請求を受け付けました。'); closeModal();">
+                <div class="form-group">
+                    <label>保護者様 お名前</label>
+                    <input type="text" required placeholder="例：店魅 太郎">
+                </div>
+                <div class="form-group">
+                    <label>メールアドレス</label>
+                    <input type="email" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label>対象の課程</label>
+                    <select>
+                        <option>幼稚園</option>
+                        <option>初等部 (小学校)</option>
+                        <option>中等部 (中学校)</option>
+                        <option>高等部 (高校)</option>
+                    </select>
+                </div>
+                <div style="text-align:center;">
+                    <button type="submit" class="btn">送信する</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h2 class="serif">店魅偉屋大学附属<br>幼小中高一貫教育校</h2>
+                    <p style="opacity:0.8;">
+                        〒113-8655 東京都文京区本郷 7-3-2<br>
+                        MAIL: school.info@misemi-ya.net
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>学校紹介</h4>
+                    <ul>
+                        <li><a href="#" onclick="navigateTo('about')">校長挨拶</a></li>
+                        <li><a href="#" onclick="navigateTo('about')">沿革</a></li>
+                        <li><a href="#" onclick="navigateTo('life')">施設紹介</a></li>
+                        <li><a href="#" onclick="navigateTo('access')">交通アクセス</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>受験生の方へ</h4>
+                    <ul>
+                        <li><a href="#" onclick="navigateTo('admissions')">入試情報</a></li>
+                        <li><a href="#" onclick="navigateTo('admissions')">説明会日程</a></li>
+                        <li><a href="#" onclick="openModal()">資料請求</a></li>
+                        <li><a href="#" onclick="navigateTo('admissions')">Q&A</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>在校生・保護者</h4>
+                    <ul>
+                        <li><a href="#">保護者ポータル</a></li>
+                        <li><a href="#">緊急時連絡</a></li>
+                        <li><a href="#">事務手続き</a></li>
+                        <li><a href="#">PTA活動</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright serif">
+                <p>&copy; Misemi-ya University Integrated School. All Rights Reserved.</p>
+                <div class="image-credits">
+                    Images by <a href="https://unsplash.com/@vadimsherbakov" target="_blank">Vadim Sherbakov</a>, <a href="https://unsplash.com/@giamboscaro" target="_blank">Giammarco Boscaro</a>, <a href="https://unsplash.com/@element5digital" target="_blank">Element5 Digital</a> on <a href="https://unsplash.com/" target="_blank">Unsplash</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクリプト -->
+    <script>
+        // ================= SPA Navigation Logic =================
+        function navigateTo(pageId) {
+            // ローディング演出
+            const loader = document.getElementById('loading');
+            loader.style.display = 'flex';
+            loader.style.opacity = '1';
+
+            // 0.5秒後にページ切り替え
+            setTimeout(() => {
+                // すべてのセクションを非表示
+                document.querySelectorAll('.page-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // ナビゲーションのアクティブ状態リセット
+                document.querySelectorAll('.main-nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // 指定されたセクションを表示
+                const target = document.getElementById(pageId);
+                if (target) {
+                    target.classList.add('active');
+                } else {
+                    // IDがない場合はホームに戻すなどの処理
+                    document.getElementById('home').classList.add('active');
+                }
+
+                // ナビゲーションのアクティブ化
+                const navLink = document.getElementById('nav-' + pageId);
+                if (navLink) navLink.classList.add('active');
+
+                // ページトップへ
+                window.scrollTo(0, 0);
+
+                // ローディング解除
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 300);
+            }, 500);
+        }
+
+        // ================= Initial Load =================
+        window.onload = function() {
+            const loader = document.getElementById('loading');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 500);
+            }, 1000); // 初回は少し長く見せる
+            
+            // News生成
+            const newsData = [
+                { date: '2026.01.15', cat: 'exam', label: '重要', title: '【中等部】令和8年度入学試験 合格発表について' },
+                { date: '2026.01.12', cat: 'event', label: 'イベント', title: '第5回 定期演奏会のお知らせ' },
+                { date: '2026.01.08', cat: 'school', label: 'お知らせ', title: 'インフルエンザによる学級閉鎖について（初等部）' },
+                { date: '2025.12.25', cat: 'school', label: '部活動', title: '高等部サッカー部 全国大会出場決定！' },
+                { date: '2025.12.10', cat: 'exam', label: '入試', title: '冬の学校説明会（最終）の予約受付開始' }
+            ];
+            renderNews(newsData);
+        };
+
+        // ================= News Filter =================
+        function renderNews(data) {
+            const container = document.getElementById('news-container');
+            container.innerHTML = '';
+            data.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'news-item';
+                div.innerHTML = `
+                    <div class="news-date">${item.date}</div>
+                    <div class="news-cat ${item.cat}">${item.label}</div>
+                    <a href="#" onclick="alert('詳細ページへ移動します')">${item.title}</a>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function filterNews(category) {
+            // タブのアクティブ切り替え
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const newsData = [
+                { date: '2026.01.15', cat: 'exam', label: '重要', title: '【中等部】令和8年度入学試験 合格発表について' },
+                { date: '2026.01.12', cat: 'event', label: 'イベント', title: '第5回 定期演奏会のお知らせ' },
+                { date: '2026.01.08', cat: 'school', label: 'お知らせ', title: 'インフルエンザによる学級閉鎖について（初等部）' },
+                { date: '2025.12.25', cat: 'school', label: '部活動', title: '高等部サッカー部 全国大会出場決定！' },
+                { date: '2025.12.10', cat: 'exam', label: '入試', title: '冬の学校説明会（最終）の予約受付開始' }
+            ];
+
+            if (category === 'all') {
+                renderNews(newsData);
+            } else {
+                const filtered = newsData.filter(item => item.cat === category);
+                renderNews(filtered);
+            }
+        }
+
+        // ================= Slider Logic =================
+        let slideIndex = 0;
+        function showSlides() {
+            const slides = document.querySelectorAll(".slide");
+            // ホームが表示されている時のみスライドさせる
+            if (document.getElementById('home').classList.contains('active')) {
+                slides.forEach(slide => slide.classList.remove("active"));
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                slides[slideIndex - 1].classList.add("active");
+            }
+            setTimeout(showSlides, 5000); // 5秒ごとに切り替え
+        }
+        showSlides();
+
+        // ================= Modal Logic =================
+        function openModal() {
+            document.getElementById('brochureModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('brochureModal').style.display = 'none';
+        }
+        // 背景クリックで閉じる
+        window.onclick = function(event) {
+            const modal = document.getElementById('brochureModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
